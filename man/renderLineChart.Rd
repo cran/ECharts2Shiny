@@ -8,7 +8,17 @@ Render the Line Chart Plotted by ECharts into Shiny Application
 renderLineChart() function helps render the line chart into Shiny application.
 }
 \usage{
-renderLineChart(div_id, data, theme = "default", running_in_shiny = TRUE)
+renderLineChart(div_id, data, theme = "default",
+                line.width = 2, line.type = "solid",
+                point.size = 5, point.type = "emptyCircle",
+                stack_plot = FALSE, step = "null",
+                show.legend = TRUE, show.tools = TRUE,
+                font.size.legend= 12,
+                font.size.axis.x = 12, font.size.axis.y = 12,
+                rotate.axis.x = 0, rotate.axis.y = 0,
+                show.slider.axis.x = FALSE, show.slider.axis.y = FALSE,
+                animation = TRUE,
+                running_in_shiny = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,6 +30,72 @@ The division id users specified for this chart. The division will be specified i
 }
   \item{theme}{
 Which ECharts theme to use. Valid values include "default", "roma", "infographic", "macarons", "vintage", "shine".
+}
+  \item{line.width}{
+This is to help set the width of the lines.
+
+The value should be either numeric or integer. The default value is 2.
+
+Its length should be either one or the same as the number of categories in the data (the number of columns in the data).
+}
+  \item{line.type}{
+The type of the lines.
+
+The value can be "solid", "dashed", or "dotted". The default value is "solid".
+
+Its length should be either one or the same as the number of categories in the data (the number of columns in the data).
+}
+  \item{point.size}{
+This argument helps set the size of points in the scatter plots.
+
+The value should be either numeric or integer. The default value is 5.
+
+Its length should be either one or the same as the number of categories in the data (the number of columns in the data).
+}
+  \item{point.type}{
+The shape of the points in scatter plots.
+
+Valid values include 'emptyCircle', 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'. The default value is 'emptyCircle'.
+
+Its length should be either one or the same as the number of categories in the data (the number of columns in the data).
+}
+  \item{stack_plot}{
+Whether do stack line chart. The default value is FALSE.
+}
+  \item{step}{
+This argument helps plot step line charts. The default value is "null", i.e., non-step line chart.
+
+If users want step line chart, they can choose "start", "middle", or "end" to determine the turning point positions in the step line charts.
+}
+  \item{show.legend}{
+If display the legends. The default value is TRUE.
+}
+  \item{show.tools}{
+If display the tool bar. The default value is TRUE.
+}
+  \item{font.size.legend}{
+The font size of legend bar. The default value is 12.
+}
+  \item{font.size.axis.x}{
+The font size of the labels on X axis. The default value is 12.
+}
+  \item{font.size.axis.y}{
+The font size of the labels on Y axis. The default value is 12.
+}
+  \item{rotate.axis.x}{
+The rotation degree of labels on X axis. The default value is 0.
+}
+  \item{rotate.axis.y}{
+The rotation degree of labels on Y axis. The default value is 0.
+}
+  \item{show.slider.axis.x}{
+Whether display slider on X axis. The default value is FALSE.
+}
+  \item{show.slider.axis.y}{
+Whether display slider on Y axis. The default value is FALSE.
+}
+  \item{animation}{
+Whether display the chart with animation. The default value is TRUE.
 }
   \item{running_in_shiny}{
       If we're actually running this in a Shiny library, or we're simply doing testing. Default valus is "TRUE". If "FALSE", the function will print what it's supposed to evaluate.
