@@ -9,6 +9,7 @@ renderScatter <- function(div_id, data,
                           show.legend = TRUE, show.tools = TRUE,
                           font.size.legend = 12,
                           font.size.axis.x = 12, font.size.axis.y = 12,
+                          axis.x.name = NULL, axis.y.name = NULL,
                           rotate.axis.x = 0, rotate.axis.y = 0,
                           show.slider.axis.x = FALSE, show.slider.axis.y = FALSE,
                           animation = TRUE,
@@ -22,6 +23,10 @@ renderScatter <- function(div_id, data,
   }
 
   data <- .process_NA(data)
+
+  # Check logical variables (whether they're logical)
+  .check_logical(c('auto.scale', 'show.tools', 'show.legend', 'animation',
+                   'show.slider.axis.x', 'show.slider.axis.y', 'running_in_shiny'))
 
   # DATA PREPARATION:
   # For scatter plots, the data must be prepared as a data.frame of 3 columns.
@@ -129,12 +134,12 @@ renderScatter <- function(div_id, data,
 
                         ifelse(auto.scale,
 
-                               paste("xAxis:[{type : 'value',scale:true, axisLabel:{rotate:",
+                               paste("xAxis:[{type : 'value', name:", ifelse(is.null(axis.x.name), 'null', paste("'", axis.x.name, "'", sep="")), ", scale:true, axisLabel:{rotate:",
                                      rotate.axis.x,
                                      ",textStyle:{fontSize:",
                                      font.size.axis.x,
                                      "}}}],",
-                                     "yAxis:[{type : 'value',scale:true,axisLabel:{rotate:",
+                                     "yAxis:[{type:'value', name:", ifelse(is.null(axis.y.name), 'null', paste("'", axis.y.name, "'", sep="")), ", scale:true,axisLabel:{rotate:",
                                      rotate.axis.y,
                                      ",textStyle:{fontSize:",
                                      font.size.axis.y,

@@ -11,6 +11,7 @@ renderBarChart <- function(div_id,
                            show.legend = TRUE, show.tools = TRUE,
                            font.size.legend = 12,
                            font.size.axis.x = 12, font.size.axis.y = 12,
+                           axis.x.name = NULL, axis.y.name = NULL,
                            rotate.axis.x = 0, rotate.axis.y = 0,
                            bar.max.width = NULL,
                            animation = TRUE,
@@ -22,6 +23,9 @@ renderBarChart <- function(div_id,
 
   # Check the value for theme
   theme_placeholder <- .theme_placeholder(theme)
+
+  # Check logical variables (whether they're logical)
+  .check_logical(c('stack_plot', 'show.tools', 'show.legend', 'animation', 'running_in_shiny'))
 
   # Check if the "direction" value is valid
   if(direction == "horizontal"){
@@ -90,9 +94,9 @@ renderBarChart <- function(div_id,
                                ""),
                         "grid: {left:'", grid_left, "', right:'", grid_right, "', top:'", grid_top, "', bottom:'", grid_bottom, "', containLabel: true},",
                         direction_vector[1],
-                        ":[{type:'value', axisLabel:{rotate:", rotate.axis.y, ",textStyle:{fontSize:", font.size.axis.y, "}}}], ",
+                        ":[{type:'value', name:", ifelse(is.null(axis.y.name), 'null', paste("'", axis.y.name, "'", sep="")), ", axisLabel:{rotate:", rotate.axis.y, ",textStyle:{fontSize:", font.size.axis.y, "}}}], ",
                         direction_vector[2],
-                        ":[{type:'category', axisTick:{show:false}, axisLabel:{rotate:", rotate.axis.x, ",textStyle:{fontSize:", font.size.axis.x, "}}, data:",
+                        ":[{type:'category', name:", ifelse(is.null(axis.x.name), 'null', paste("'", axis.x.name, "'", sep="")), ", axisTick:{show:false}, axisLabel:{rotate:", rotate.axis.x, ",textStyle:{fontSize:", font.size.axis.x, "}}, data:",
                         xaxis_name,
                         "}],series :",
                         series_data,
