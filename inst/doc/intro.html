@@ -114,7 +114,7 @@ dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class
 <span class="kw">row.names</span>(dat) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Time-1&quot;</span>, <span class="st">&quot;Time-2&quot;</span>, <span class="st">&quot;Time-3&quot;</span>)
 
 <span class="co"># Server function -------------------------------------------</span>
-server &lt;-<span class="st"> </span>function(input, output) {
+server &lt;-<span class="st"> </span><span class="cf">function</span>(input, output) {
   <span class="co"># Call functions from ECharts2Shiny to render charts</span>
   <span class="kw">renderBarChart</span>(<span class="dt">div_id =</span> <span class="st">&quot;test&quot;</span>, <span class="dt">grid_left =</span> <span class="st">'1%'</span>, <span class="dt">direction =</span> <span class="st">&quot;vertical&quot;</span>,
                  <span class="dt">data =</span> dat)
@@ -125,7 +125,7 @@ ui &lt;-<span class="st"> </span><span class="kw">fluidPage</span>(
   <span class="co"># We MUST load the ECharts javascript library in advance</span>
   <span class="kw">loadEChartsLibrary</span>(),
   
-  tags$<span class="kw">div</span>(<span class="dt">id=</span><span class="st">&quot;test&quot;</span>, <span class="dt">style=</span><span class="st">&quot;width:50%;height:400px;&quot;</span>),
+  tags<span class="op">$</span><span class="kw">div</span>(<span class="dt">id=</span><span class="st">&quot;test&quot;</span>, <span class="dt">style=</span><span class="st">&quot;width:50%;height:400px;&quot;</span>),
   <span class="kw">deliverChart</span>(<span class="dt">div_id =</span> <span class="st">&quot;test&quot;</span>)
 )
 

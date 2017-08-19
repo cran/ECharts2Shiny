@@ -3,8 +3,8 @@ Type: Package
 Title: Embedding Interactive Charts Generated with ECharts Library into
         Shiny Applications
 Imports: shiny,jsonlite
-Version: 0.2.11
-Date: 2017-05-09
+Version: 0.2.12
+Date: 2017-08-19
 Authors@R: c(
     person("Xiaodong", "Deng", role = c("aut", "cre"), email = "xd_deng@hotmail.com"),
     person("Hao", "Zhu", role = "ctr", email = "haozhu233@gmail.com"),
@@ -20,10 +20,10 @@ LazyData: TRUE
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2017-05-09 15:31:44 UTC; XD
+Packaged: 2017-08-19 05:05:31 UTC; XD
 Author: Xiaodong Deng [aut, cre],
   Hao Zhu [ctr],
   Yiheng Li [ctr],
   Janet Wagner [ctr]
 Repository: CRAN
-Date/Publication: 2017-05-09 21:47:19 UTC
+Date/Publication: 2017-08-19 05:14:40 UTC
