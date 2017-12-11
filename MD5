@@ -1,6 +1,6 @@
-d8ab1ef9acd98258d3db41a6f30a7878 *DESCRIPTION
+5e7312ab457c145593dd71f8b7a14593 *DESCRIPTION
 40deea42182bea616960a99868efade1 *NAMESPACE
-35c9d0b191537cdb318095265bb2c134 *NEWS
+cfc6b3e81cf6d7e8fcccfd895ae0e802 *NEWS
 3784684cc5a08b9e5184969659db2eb0 *R/bar_chart.R
 9f02109ee42525cbaf9cb4aaee6c72b9 *R/deliverChart.R
 1b0b54ccb694070627b819043dc52427 *R/gauge.R
@@ -13,14 +13,14 @@ e9d9c08fcbad8407bf5929cd8c53db9d *R/pie_chart.R
 c7c154fb2bfa76da4f90ef17a7b884e9 *R/radar_chart.R
 14f6dc1ddbcd04a0c16a77da93689483 *R/scatter.R
 de0cf7383bddddede871e0fb5548b9b3 *R/tree_map.R
-73267d1f4e80c37848ed2613e2937bb1 *R/word_cloud.R
-97540ea59d804425c0565987de6a8bfa *README.md
+037277e8029f789fcdee3286fc8fea23 *R/word_cloud.R
+8bc8909fd5755c70846ddf32678190eb *README.md
 006dc27061a6d2d118dce218e135e331 *build/vignette.rds
 340778bb6f821a6905de63860d9f14e2 *inst/caravan.js
 71bec5c765ebdc7fb6121fdba64c6cee *inst/dark-digerati.js
 53b136f1a0572f05b754fa95674724c4 *inst/doc/intro.R
 274cd2045bf435b5886fe2dc35f38e24 *inst/doc/intro.Rmd
-2df05d9c0c953fe50866602d6a968f76 *inst/doc/intro.html
+9b85a619182dfe453e5a877ef4e1347c *inst/doc/intro.html
 6fda7fcf7dae3adffb4ba69024ded994 *inst/echarts.js
 c4859ffebdfb7147a5c3d09327b11fdb *inst/infographic.js
 355ed558f97e1d334a94b61d7850a49d *inst/jazz.js
